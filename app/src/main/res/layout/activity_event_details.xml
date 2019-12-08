@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EventDetailsActivity">
+
+    <TextView
+        android:id="@+id/detailsNameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Name"
+        android:gravity="center"
+        android:padding="10dp"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_weight="3"
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/progressBudget"
+                android:layout_width="257dp"
+                android:layout_height="245dp"
+                android:max="100"
+                android:progress="100"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/progressStatusTV"
+                style="@style/TextAppearance.AppCompat.Display2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                app:layout_constraintBottom_toBottomOf="@id/progressBudget"
+                app:layout_constraintEnd_toEndOf="@id/progressBudget"
+                app:layout_constraintStart_toStartOf="@id/progressBudget"
+                app:layout_constraintTop_toTopOf="@id/progressBudget"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/budgetTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Budget Status"
+                android:gravity="center"
+                android:textSize="20dp"
+
+                />
+
+            <TextView
+                android:id="@+id/budgetStatusTV"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="(100/1000)" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp">
+
+        <ExpandableListView
+            android:id="@+id/eventExpandable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
